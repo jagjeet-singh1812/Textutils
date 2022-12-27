@@ -114,10 +114,10 @@ export default function Textforms(props) {
         <div className="container">
           <h2>Your Text Summary</h2>
           <p className="my-2">
-            {text === "" ? 0 : text.split(" ").filter((ele)=>{return ele.length!==0}).length } Words and{" "}
+            {text === "" ? 0 : text.split(/\s+/).filter((ele)=>{return ele.length!==0}).length } Words and{" "}
             {text.length} Characters
           </p>
-          <p>{(0.008 * text.split(' ').filter((ele)=>{return ele.length!==0}).length).toFixed(4)} Minutes Reading Time</p>
+          <p>{(0.008 * text.split(/\s+/).filter((ele)=>{return ele.length!==0}).length).toFixed(4)} Minutes Reading Time</p>
           <h2>Preview</h2>
           <p>
             {text.length === 0
